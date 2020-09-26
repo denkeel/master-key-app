@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\IndexController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\IndexOrdersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', function () {
-    $orders = '';
-    for ($i = 0; $i < 6; $i++) {
-        $orders .= "<li> заказ $i</li>";
-    }
-    return 'мастер ключа<br>' . '<ul>' . $orders . '</ul>';
-});
+Route::get('/', [IndexOrdersController::class, 'index']);
+//Route::get('/{id}', [IndexOrdersController::class, 'one']);
+Route::get('/admin', [IndexController::class, 'index']);
+Route::get('/categories/{category}', [CategoryController::class, 'index']);
