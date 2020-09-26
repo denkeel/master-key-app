@@ -12,3 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/', function () {
+    $orders = '';
+    for ($i = 0; $i < 6; $i++) {
+        $orders .= "<li> заказ $i</li>";
+    }
+    return 'мастер ключа<br>' . '<ul>' . $orders . '</ul>';
+});
