@@ -10,4 +10,9 @@ class CategoryController extends Controller
     {
         return 'Category';
     }
+
+    public function showCategory($category)
+    {
+        return $category;
+    }
 }
