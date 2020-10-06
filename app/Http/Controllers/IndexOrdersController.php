@@ -13,15 +13,15 @@ class IndexOrdersController extends Controller
 
     public function all()
     {
-        $orders = '';
+        $orders = [];
         for ($i = 0; $i < 6; $i++) {
-            $orders .= "<li> заказ $i</li>";
+            $orders[] = $i;
         }
-        return 'Заказы:<br>' . '<ul>' . $orders . '</ul>';
+        return view('orders', ['orders' => $orders]);
     }
 
     public function one($id)
     {
-        //TO-DO One
+        return view('order', ['id' => $id]);
     }
 }
