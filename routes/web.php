@@ -38,3 +38,5 @@ Route::get('/settings', [SettingsController::class, 'index']);
 Route::get('/auth', [AuthController::class, 'index']);
 
 Route::get('/admin', [IndexController::class, 'index']);
+
+//dz5
