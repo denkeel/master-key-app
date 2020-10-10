@@ -28,6 +28,8 @@ Route::get('/categories/{category}', [CategoryController::class, 'showCategory']
 Route::get('/search', [SearchController::class, 'index']);
 
 Route::get('/add', [AddController::class, 'index']);
+Route::post('/adding', [AddController::class, 'adding']);
+Route::get('/added', [AddController::class, 'added'])->name('added');
 
 Route::get('/users', [UsersController::class, 'index']);
 
